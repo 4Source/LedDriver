@@ -6,21 +6,18 @@
 # Datatypes (KEYWORD1)
 #######################################
 
+addrLED	KEYWORD1
+SK6812 	KEYWORD1
 WS2812	KEYWORD1
 
 #######################################
 # Methods and Functions (KEYWORD2)
 #######################################
-setPixelGRB			KEYWORD2
-show					KEYWORD2
-Single		KEYWORD2
+setPixel			KEYWORD2
+Single				KEYWORD2
 ColorLine			KEYWORD2
 SpecificColor		KEYWORD2
-color				KEYWORD2
-color_red			KEYWORD2
-color_green			KEYWORD2
-color_blue			KEYWORD2
-color_white			KEYWORD2
+show				KEYWORD2
 countPixel			KEYWORD2
 getPin				KEYWORD2
 setPin				KEYWORD2

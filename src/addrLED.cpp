@@ -1,7 +1,7 @@
 //----------------------------------------------------
 // File:	addrLED.cpp
-// Version:  	v0.1.0
-// Change date:	22.05.2020
+// Version:  	v0.1.1
+// Change date:	23.05.2020
 // Autor:    	4Source
 // Homepage: 	github.com/4Source
 //----------------------------------------------------
@@ -138,6 +138,21 @@ void addrLED::Single(uint32_t pixel, uint16_t pixelNr)
 		Single(r, g, b, pixelNr);
 	}
 }
+void addrLED::Single(uint8_t *buffer, uint16_t pixelNr)
+{
+	uint8_t r = *buffer;
+	uint8_t g = *(buffer + 1);
+	uint8_t b = *(buffer + 2);
+	if(getInternal(order) == 4)
+	{
+		uint8_t w = *(buffer + 3);
+		Single(r, g, b, w, pixelNr);
+	}
+	else
+	{
+		Single(r, g, b, pixelNr);
+	}
+}
 
 //Color for all pixels
 void addrLED::ColorLine( uint8_t r , uint8_t g , uint8_t b ) 
@@ -200,21 +215,6 @@ void addrLED::SpecificColor(uint8_t *buffer)
 		}
 	}
 }
-
-/* void addrLED::show() 
-{
-	noInterrupts();
-
-	uint32_t index = 0;
-	
-	while(index < (pixels * getInternal(order)))
-	{
-		Serial.print(colorBuffer[index]); Serial.print(" ");
-		index++;
-	}
-	Serial.println();
-	interrupts();
-} */
 void addrLED::show() 
 {
 	noInterrupts();

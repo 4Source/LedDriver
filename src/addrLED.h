@@ -1,6 +1,6 @@
 //----------------------------------------------------
 // File:	addrLED.h
-// Version:  	v0.1.0
+// Version:  	v0.1.1
 // Change date:	23.05.2020
 // Autor:    	4Source
 // Homepage: 	github.com/4Source
@@ -54,6 +54,7 @@ class addrLED
     void Single(uint8_t, uint8_t, uint8_t, uint16_t);
 	void Single(uint8_t, uint8_t, uint8_t, uint8_t, uint16_t);
     void Single(uint32_t, uint16_t);
+	void Single(uint8_t*, uint16_t);
 
     void ColorLine(uint8_t, uint8_t, uint8_t);
 	void ColorLine(uint8_t, uint8_t, uint8_t, uint8_t);
