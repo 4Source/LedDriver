@@ -18,6 +18,7 @@ Single				KEYWORD2
 ColorLine			KEYWORD2
 SpecificColor		KEYWORD2
 show				KEYWORD2
+showSerial			KEYWORD2
 countPixel			KEYWORD2
 getPin				KEYWORD2
 getOrder			KEYWORD2

@@ -1,6 +1,6 @@
 //----------------------------------------------------
 // File:	addrLED.cpp
-// Version:  	v0.1.2
+// Version:  	v0.1.3
 // Change date:	23.05.2020
 // Autor:    	4Source
 // Homepage: 	github.com/4Source
@@ -260,6 +260,20 @@ void addrLED::show()
 	cycle_start = cycle_now;
 	while(((cycle_now = _getCycleCount()) - cycle_start) < time_ret);
 	interrupts();
+}
+void addrLED::showSerial() 
+{
+	uint32_t index = 0;
+	uint32_t max = pixels;
+	
+	while(index < max)
+	{
+		Serial.print(" val="); Serial.print(colorBuffer[index]);
+		index++;
+
+		
+	}
+	Serial.println(" Reset");
 }
 
 uint8_t addrLED::countPixel()

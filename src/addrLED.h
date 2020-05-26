@@ -1,6 +1,6 @@
 //----------------------------------------------------
 // File:	addrLED.h
-// Version:  	v0.1.2
+// Version:  	v0.1.3
 // Change date:	23.05.2020
 // Autor:    	4Source
 // Homepage: 	github.com/4Source
@@ -35,6 +35,7 @@ class addrLED
       RGB = 432,
       GRB = 423,
       RGBW = 1432,
+	  GRBW = 1423,
     };
 	
   private:
@@ -63,6 +64,7 @@ class addrLED
     void SpecificColor(uint8_t*);
 
 	void show();
+	void showSerial();
 
     uint8_t countPixel();
     uint8_t getPin();
