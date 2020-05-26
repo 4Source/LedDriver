@@ -48,6 +48,6 @@ void loop()
 	}
 	leds.ColorLine(red[i], green[i], blue[i], white[i]);
 	leds.show();
-	delay(5000);
+	delay(1000);
 	i++;
 }
