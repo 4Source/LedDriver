@@ -1,6 +1,6 @@
 //----------------------------------------------------
 // File:	addrLED.cpp
-// Version:  	v0.1.1
+// Version:  	v0.1.2
 // Change date:	23.05.2020
 // Autor:    	4Source
 // Homepage: 	github.com/4Source
@@ -24,7 +24,7 @@ addrLED::addrLED(uint16_t countPixel, enum _ColorOrder ledOrder, uint8_t gpio_pi
 	aktivByte = 0;
 	order = ledOrder;
 	
-	uint16_t bytes = pixels * getInternal(order);
+	uint16_t bytes = pixels * Internal(order);
 	
 	colorBuffer = (uint8_t*)calloc(bytes, sizeof(uint8_t));
 	pinMode(pin, OUTPUT);
@@ -33,7 +33,7 @@ addrLED::addrLED(uint16_t countPixel, enum _ColorOrder ledOrder, uint8_t gpio_pi
 void addrLED::setPixel( uint8_t r, uint8_t g , uint8_t b )  
 {	
 	uint32_t orderbuffer = order;
-	for(uint8_t i = 0; i < getInternal(order); i++)
+	for(uint8_t i = 0; i < Internal(order); i++)
 	{
 		uint8_t rest = orderbuffer % 10;
 		orderbuffer /= 10;
@@ -68,7 +68,7 @@ void addrLED::setPixel( uint8_t r, uint8_t g , uint8_t b )
 void addrLED::setPixel(uint8_t r, uint8_t g, uint8_t b, uint8_t w)
 {	
 	uint32_t orderbuffer = order;
-	for(uint8_t i = 0; i < getInternal(order); i++)
+	for(uint8_t i = 0; i < Internal(order); i++)
 	{
 		uint8_t rest = orderbuffer % 10;
 		orderbuffer /= 10;
@@ -106,7 +106,7 @@ void addrLED::Single(uint8_t r , uint8_t g , uint8_t b, uint16_t pixelNr)
 { 
 	if(pixelNr < pixels)
 	{
-		aktivByte = pixelNr * getInternal(order);
+		aktivByte = pixelNr * Internal(order);
 		setPixel( r , g , b );
 	}
 }
@@ -114,13 +114,13 @@ void addrLED::Single( uint8_t r , uint8_t g , uint8_t b, uint8_t w, uint16_t pix
 { 
 	if(pixelNr < pixels)
 	{
-		aktivByte = pixelNr * getInternal(order);
+		aktivByte = pixelNr * Internal(order);
 		setPixel( r , g , b , w);
 	}
 }
 void addrLED::Single(uint32_t pixel, uint16_t pixelNr)
 {
-	if(getInternal(order) == 4 )
+	if(Internal(order) == 4 )
 	{
 		uint8_t w = (uint8_t)pixel;
 		uint8_t b = (uint8_t)(pixel>>=8);
@@ -143,7 +143,7 @@ void addrLED::Single(uint8_t *buffer, uint16_t pixelNr)
 	uint8_t r = *buffer;
 	uint8_t g = *(buffer + 1);
 	uint8_t b = *(buffer + 2);
-	if(getInternal(order) == 4)
+	if(Internal(order) == 4)
 	{
 		uint8_t w = *(buffer + 3);
 		Single(r, g, b, w, pixelNr);
@@ -174,7 +174,7 @@ void addrLED::ColorLine(uint8_t *buffer)
 	uint8_t r = *buffer;
 	uint8_t g = *(buffer + 1);
 	uint8_t b = *(buffer + 2);
-	if(getInternal(order) == 4)
+	if(Internal(order) == 4)
 	{
 		uint8_t w = *(buffer + 3);
 		ColorLine(r, g, b, w);
@@ -188,7 +188,7 @@ void addrLED::ColorLine(uint8_t *buffer)
 // specific Color for each pixel
 void addrLED::SpecificColor(uint8_t *buffer)
 {
-	uint8_t internals = getInternal(order);
+	uint8_t internals = Internal(order);
 	uint8_t r;
 	uint8_t g;
 	uint8_t b;
@@ -226,7 +226,7 @@ void addrLED::show()
 	uint32_t cycle_now = 0;
 	uint8_t mask = 0x80;
 	uint32_t index = 0;
-	uint32_t max = pixels * getInternal(order);
+	uint32_t max = pixels * Internal(order);
 	
 	while(index < max)
 	{
@@ -269,6 +269,10 @@ uint8_t addrLED::countPixel()
 uint8_t addrLED::getPin()
 {
 	return pin;
+}
+uint8_t addrLED::getOrder()
+{
+	return order;
 }
 void addrLED::setPin(uint8_t gpio_pin)
 {

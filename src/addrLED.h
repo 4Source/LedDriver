@@ -1,6 +1,6 @@
 //----------------------------------------------------
 // File:	addrLED.h
-// Version:  	v0.1.1
+// Version:  	v0.1.2
 // Change date:	23.05.2020
 // Autor:    	4Source
 // Homepage: 	github.com/4Source
@@ -13,7 +13,7 @@
 #include <arduino.h>
 #endif
 
-#define getInternal(a) ((a >= 1000) ? (4) : (3))
+#define Internal(a) ((a >= 1000) ? (4) : (3))
 
 #ifndef T0H
 #define T0H	(F_CPU / 2500000)	//400 ns
@@ -66,6 +66,7 @@ class addrLED
 
     uint8_t countPixel();
     uint8_t getPin();
+	uint8_t getOrder();
     void setPin(uint8_t);
 
 };

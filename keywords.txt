@@ -20,4 +20,5 @@ SpecificColor		KEYWORD2
 show				KEYWORD2
 countPixel			KEYWORD2
 getPin				KEYWORD2
+getOrder			KEYWORD2
 setPin				KEYWORD2
