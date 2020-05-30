@@ -1,7 +1,7 @@
 //----------------------------------------------------
 // File:	SK6812.cpp
-// Version:  	v0.1.3
-// Change date:	23.05.2020
+// Version:  	v0.1.5
+// Change date:	30.05.2020
 // Autor:    	4Source
 // Homepage: 	github.com/4Source
 //----------------------------------------------------
@@ -11,3 +11,8 @@ SK6812::SK6812(uint16_t countPixel, uint8_t gpio_pin) : addrLED(countPixel, addr
 
 SK6812::SK6812(uint16_t countPixel, enum _ColorOrder ledOrder, uint8_t gpio_pin) : addrLED(countPixel, ledOrder, gpio_pin) {}
 
+
+String SK6812::getLedType()
+{
+	return "SK6812";
+}

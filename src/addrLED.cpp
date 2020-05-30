@@ -1,6 +1,6 @@
 //----------------------------------------------------
 // File:	addrLED.cpp
-// Version:  	v0.1.4
+// Version:  	v0.1.5
 // Change date:	30.05.2020
 // Autor:    	4Source
 // Homepage: 	github.com/4Source
@@ -292,4 +292,8 @@ void addrLED::setPin(uint8_t gpio_pin)
 {
 	pin = gpio_pin;
 	pinMode(pin, OUTPUT);
+}
+String addrLED::getLedType()
+{
+	return "Basic Addressable LED";
 }

@@ -1,7 +1,7 @@
 //----------------------------------------------------
 // File:	WS2812.h
-// Version:  	v0.1.3
-// Change date:	23.05.2020
+// Version:  	v0.1.5
+// Change date:	30.05.2020
 // Autor:    	4Source
 // Homepage: 	github.com/4Source
 //----------------------------------------------------
@@ -27,5 +27,7 @@ class WS2812 : public addrLED
    public:
 	WS2812(uint16_t, uint8_t);
 	WS2812(uint16_t, enum _ColorOrder, uint8_t);
+	
+	String getLedType()override;
 };
 #endif
