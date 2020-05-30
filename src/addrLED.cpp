@@ -1,7 +1,7 @@
 //----------------------------------------------------
 // File:	addrLED.cpp
-// Version:  	v0.1.3
-// Change date:	23.05.2020
+// Version:  	v0.1.4
+// Change date:	30.05.2020
 // Autor:    	4Source
 // Homepage: 	github.com/4Source
 //----------------------------------------------------
@@ -284,7 +284,7 @@ uint8_t addrLED::getPin()
 {
 	return pin;
 }
-uint8_t addrLED::getOrder()
+uint16_t addrLED::getOrder()
 {
 	return order;
 }

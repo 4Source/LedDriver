@@ -1,7 +1,7 @@
 //----------------------------------------------------
 // File:	addrLED.h
-// Version:  	v0.1.3
-// Change date:	23.05.2020
+// Version:  	v0.1.4
+// Change date:	30.05.2020
 // Autor:    	4Source
 // Homepage: 	github.com/4Source
 //----------------------------------------------------
@@ -68,7 +68,7 @@ class addrLED
 
     uint8_t countPixel();
     uint8_t getPin();
-	uint8_t getOrder();
+	uint16_t getOrder();
     void setPin(uint8_t);
 
 };
