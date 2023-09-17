@@ -1,0 +1,6 @@
+### C ###
+build/
+
+### IDF ###
+sdkconfig
+sdkconfig.old
