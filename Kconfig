@@ -1,0 +1,8 @@
+menu "Led Driver Config"
+
+config ENABLE_LCD_OUTPUT
+    bool "Enable LCD output."
+    help
+        Just an Excample config.
+
+endmenu
