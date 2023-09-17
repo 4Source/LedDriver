@@ -1,4 +1,4 @@
 idf_component_register(
-    SRCS "hello_world_main.c"
+    SRCS "LedDriver_Basic_main.c"
     INCLUDE_DIRS ""
     )

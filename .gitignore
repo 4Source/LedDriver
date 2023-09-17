@@ -1,3 +1,13 @@
+### C ###
+build/
+
+### IDF ###
+sdkconfig
+sdkconfig.old
+
 ### vscode ###
 .vscode/*
 *.code-workspace
+
+### dev ###
+examples/example-structure/*
