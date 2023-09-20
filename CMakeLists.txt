@@ -1,5 +1,5 @@
 idf_component_register(
-    SRCS src/hello_world.c
+    SRCS src/LedDriver.c
     INCLUDE_DIRS include
     REQUIRES 
 )
